@@ -3,6 +3,8 @@
 
 This is a simple web application that shows a picture of a cat. When a user clicks the picture, it changes to another picture of a cat meowing and a speech bubble appears with the text 'meow'. After five seconds, the meowing cat picture changes back to a random cat picture waiting to be clicked again.
 
+This app was made using prompt from ChatGPT to explore how we can use it to create apps at a fast pace.
+
 ## Tech Stack
 This application is built using HTML, CSS, and JavaScript.
 
