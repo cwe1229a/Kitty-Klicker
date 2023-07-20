@@ -1,24 +1,29 @@
-const catImage = document.getElementById("catImage");
-const speechBubble = document.getElementById("speechBubble");
+let catImage = document.querySelector("#catImage");
+let speechBubble = document.querySelector("#speechBubble");
 
-async function fetchCatImage() {
-  const response = await fetch("https://api.thecatapi.com/v1/images/search");
-  const data = await response.json();
-  return data[0].url;
+// Function to fetch cat image
+function fetchCatImage() {
+  fetch("https://api.thecatapi.com/v1/images/search")
+    .then((response) => response.json())
+    .then((data) => {
+      // Use the URL from the API response
+      let catImageUrl = data[0].url;
+      catImage.src = catImageUrl;
+    })
+    .catch((error) => console.error("Error:", error));
 }
 
-async function updateImage() {
-  catImage.src = await fetchCatImage();
-}
+// Fetch cat image when the page loads
+window.onload = fetchCatImage;
 
-catImage.addEventListener("click", () => {
+// When the image is clicked, show the meowing cat
+catImage.addEventListener("click", function () {
+  catImage.src = "https://c.tenor.com/I6kN-6X7nhAAAAAj/cat-cute.gif";
   speechBubble.classList.remove("hidden");
-  // You'll need to replace 'meowCatImageURL' with a valid URL to a meowing cat image
-  catImage.src = "meowCatImageURL";
-  setTimeout(() => {
-    updateImage();
+
+  // After 5 seconds, hide the meowing cat and fetch a new cat image
+  setTimeout(function () {
     speechBubble.classList.add("hidden");
+    fetchCatImage();
   }, 5000);
 });
-
-updateImage();
