@@ -9,8 +9,8 @@ body {
 }
 
 #catBox {
-  width: 300px;
-  height: 300px;
+  width: 500px;
+  height: 500px;
   background-color: #fbc2eb; /* change to any pastel color you prefer */
   border-radius: 20px;
   display: flex;
@@ -29,7 +29,7 @@ body {
 
 #speechBubble {
   position: absolute;
-  bottom: 20px;
+  top: 20px;
   left: 50%;
   transform: translateX(-50%);
   background-color: white;
