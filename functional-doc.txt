@@ -1,0 +1,33 @@
+Functional Specific Document
+Project Title: Interactive Cat Gallery
+Overview:
+The web application will consist of a simple, responsive, and user-interactive webpage. The application will fetch random cat images from TheCatAPI and display them to the user. The displayed cat image changes to a "meowing" cat image when clicked by the user. A speech bubble will appear, saying "meow" each time the cat image is clicked.
+
+Design and Aesthetic:
+The webpage will incorporate pastel colors and rounded elements, adhering to a cheerful and playful theme. On mobile view, the layout will adjust to offer a pleasant viewing and interaction experience across multiple devices.
+
+User Interaction:
+Users can interact with the application by clicking on the cat image.
+When the cat image is clicked, it will change to a picture of a cat appearing to meow.
+A speech bubble will display the text 'meow' whenever the cat image is clicked.
+The meowing cat image will remain on screen for 5 seconds before it reverts to another normal cat image.
+Technologies:
+HTML for the structure of the web page.
+CSS for styling and creating a responsive design.
+JavaScript for managing user interactions and API calls to TheCatAPI.
+TheCatAPI for fetching random cat images.
+Browser Compatibility:
+The application will be compatible with Google Chrome and Firefox.
+
+Hosting:
+The application will be hosted on GitHub pages.
+
+Timeline:
+This project is to be completed within a time frame of 2 hours.
+
+User Story:
+A user visits the webpage and is presented with a random cat image fetched from TheCatAPI.
+The user can click on the cat image to interact with it.
+Upon clicking, the image changes to a "meowing" cat and a speech bubble appears displaying 'meow'.
+After 5 seconds, the "meowing" cat image is replaced by another random cat image, and the process can be repeated.
+If there's anything you want to revise or add, feel free to let me know. Otherwise, I believe we're ready to start developing your application.
