@@ -1,16 +1,28 @@
-const catImage = document.querySelector('#catImage');
-const speechBubble = document.querySelector('#speechBubble');
+document.addEventListener("DOMContentLoaded", function() {
+  const catImage = document.getElementById("catImage");
+  const speechBubble = document.getElementById("speechBubble");
+  const API_URL = "https://api.thecatapi.com/v1/images/search";
+  const MEOW_IMAGE_URL = "https://i.imgur.com/Og3s9G0.jpg"; // New meow image URL
 
-let catImageUrl = 'https://c.tenor.com/I6kN-6X7nhAAAAAj/cat-cute.gif';
-let meowCatImageUrl = 'https://c.tenor.com/8Q0A9mDH2_gAAAAj/cat-yawn.gif'; // replace with your own meowing cat image URL
+  function fetchCatImage() {
+      fetch(API_URL)
+      .then(response => response.json())
+      .then(data => {
+          catImage.src = data[0].url;
+      })
+      .catch(error => console.error(error));
+  }
 
-catImage.addEventListener('click', function () {
-    if (catImage.src === catImageUrl) {
-        catImage.src = meowCatImageUrl;
-        speechBubble.classList.add('show'); // Add the "show" class to make the speech bubble visible
-    } else {
-        catImage.src = catImageUrl;
-        speechBubble.classList.remove('show'); // Remove the "show" class to hide the speech bubble
-    }
+  function showMeowImage() {
+      catImage.src = MEOW_IMAGE_URL;
+      speechBubble.classList.add("show");
+      setTimeout(() => {
+          speechBubble.classList.remove("show");
+          fetchCatImage();
+      }, 5000);
+  }
+
+  fetchCatImage();
+
+  catImage.addEventListener("click", showMeowImage);
 });
-
