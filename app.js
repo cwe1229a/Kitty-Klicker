@@ -3,6 +3,7 @@
 const catContainer = document.querySelector("#catBox");
 const catImage = document.querySelector("#catImage");
 const speechBubble = document.querySelector("#speechBubble");
+const meowSound = document.querySelector("#meowSound");
 
 const catApiUrl = "https://api.thecatapi.com/v1/images/search";
 const meowCatImageUrl = "./bigstock-Closeup-Meowing-Ginger-Cat-On-97254212.jpg"; // replace with your image file name
@@ -14,11 +15,12 @@ catImage.addEventListener("click", function () {
     speechBubble.classList.remove("show");
   } else {
     catImage.src = meowCatImageUrl;
+    meowSound.play();
     speechBubble.classList.add("show");
     setTimeout(() => {
       speechBubble.classList.remove("show");
     }, 2000);
-    setTimeout(fetchCatImage, 2000);
+    setTimeout(fetchCatImage, 2000); // Adjusted the time here
   }
 });
 
